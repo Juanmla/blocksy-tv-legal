@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blocksy TV — Privacy Policy</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --muted: #5b5b5b;
+    --rule: #e2e2e2;
+    --accent: #208aef;
+    --card: #f6f7f9;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0e1116;
+      --fg: #e8eaed;
+      --muted: #9aa0a6;
+      --rule: #262b33;
+      --accent: #4ea1ff;
+      --card: #161a21;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 4rem;
+  }
+  h1 { font-size: 1.8rem; margin: 0 0 .25rem; }
+  h2 { font-size: 1.2rem; margin: 2.25rem 0 .5rem; }
+  h3 { font-size: 1.02rem; margin: 1.5rem 0 .35rem; }
+  p, li { color: var(--fg); }
+  a { color: var(--accent); }
+  .meta { color: var(--muted); font-size: .92rem; margin: 0 0 1.5rem; }
+  .lead {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 1rem 1.15rem;
+    margin: 1.5rem 0;
+  }
+  .lead p { margin: .4rem 0; }
+  hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .95rem; }
+  th, td { text-align: left; vertical-align: top; padding: .55rem .5rem; border-bottom: 1px solid var(--rule); }
+  th { color: var(--muted); font-weight: 600; }
+  code { background: var(--card); padding: .1rem .35rem; border-radius: 4px; font-size: .9em; }
+  footer { color: var(--muted); font-size: .9rem; margin-top: 3rem; }
+  ul { padding-left: 1.25rem; }
+  li { margin: .3rem 0; }
+</style>
+</head>
+<body>
+<main>
+
+<h1>Privacy Policy — Blocksy TV</h1>
+<p class="meta">Last updated: 9 September 2026</p>
+
+<div class="lead">
+  <p><strong>Short version:</strong> Blocksy TV keeps everything on your device.
+  It has no user accounts, no servers of its own, no analytics, no advertising,
+  and no third-party trackers. It does not collect, transmit, sell, or share
+  your personal information.</p>
+  <p>The app connects to the internet for one purpose only: to check whether a
+  newer version of the app is available. That check contains no personal data.</p>
+</div>
+
+<p>Blocksy TV is an Android TV app that lets you block distracting apps and set
+daily time limits on others. This policy explains what the app accesses on your
+device, why, and where that information is kept.</p>
+
+<p>Blocksy TV is published by an independent developer
+(<a href="mailto:juanmlamperti@gmail.com">juanmlamperti@gmail.com</a>).
+References to &ldquo;we&rdquo; or &ldquo;the app&rdquo; mean Blocksy TV.</p>
+
+<hr>
+
+<h2>1. What the app accesses on your device, and why</h2>
+
+<h3>Usage Access (<code>PACKAGE_USAGE_STATS</code>)</h3>
+<p>Android&rsquo;s Usage Access permission lets Blocksy TV read how long each app
+has been in the foreground. The app uses this to:</p>
+<ul>
+  <li>enforce the daily time limits you set on specific apps;</li>
+  <li>show you the usage report (per-app screen time by day, week, month, and year).</li>
+</ul>
+<p>This information is read directly from the operating system on your device and
+is only ever processed on your device.</p>
+
+<h3>Accessibility Service</h3>
+<p>Blocksy TV registers an Accessibility Service so it can tell which app has just
+come to the foreground. When you open an app you have blocked, or one that has
+passed its daily limit, the service triggers Blocksy&rsquo;s full-screen block
+message.</p>
+<p>The service is deliberately narrow. It reacts only to
+&ldquo;window state changed&rdquo; events and reads only the <em>package name</em>
+of the app in front (for example <code>com.example.videoapp</code>). It does
+<strong>not</strong> read the contents of the screen, text you type, form fields,
+passwords, messages, or any other on-screen information, and it does not record or
+transmit anything about your activity. The only thing it writes is a local count
+of how many times a block was triggered, used for the &ldquo;blocked N&times;&rdquo;
+figure in the report.</p>
+
+<h3>Installed apps list (<code>QUERY_ALL_PACKAGES</code>)</h3>
+<p>To let you choose which apps to block or limit, Blocksy TV reads the list of
+apps installed on your device &mdash; their names and icons. This list is shown to
+you in the app and is not stored or sent anywhere.</p>
+
+<hr>
+
+<h2>2. What is stored, and where</h2>
+
+<p>All of the following is kept in Blocksy TV&rsquo;s private storage on your
+device. None of it is uploaded, backed up to a remote server by the app, or shared
+with anyone.</p>
+
+<table>
+  <tr><th>Data</th><th>Purpose</th><th>Where</th></tr>
+  <tr>
+    <td>Daily per-app foreground time</td>
+    <td>Usage report and time-limit enforcement</td>
+    <td>Local database on device</td>
+  </tr>
+  <tr>
+    <td>Count of times a block was shown, per app</td>
+    <td>&ldquo;Blocked N&times;&rdquo; figure in the report</td>
+    <td>Local database on device</td>
+  </tr>
+  <tr>
+    <td>Your list of blocked apps and time limits</td>
+    <td>The core blocking feature</td>
+    <td>Local app settings on device</td>
+  </tr>
+  <tr>
+    <td>Settings PIN</td>
+    <td>Protecting the settings screen from changes</td>
+    <td>Stored only as a salted SHA-256 hash in Android&rsquo;s
+        Keystore-backed secure storage. The PIN itself is never stored.</td>
+  </tr>
+</table>
+
+<p>Because there is no account, this data exists only on the device where you
+installed the app.</p>
+
+<hr>
+
+<h2>3. Data sharing and selling</h2>
+<p>None. Blocksy TV contains no advertising SDKs, no analytics or crash-reporting
+SDKs, and no third-party trackers. It does not share or sell any data, because it
+does not collect any.</p>
+
+<hr>
+
+<h2>4. Network use</h2>
+<p>Blocksy TV works fully offline. It makes one kind of network request: it asks
+Expo&rsquo;s update service (<code>u.expo.dev</code>) whether a newer JavaScript
+bundle for the app is available, so bug fixes can be delivered without a full app
+update. That request carries only technical information &mdash; the app version,
+the platform, the update channel, and a random installation identifier generated
+by the update library &mdash; and <strong>no personal data</strong>. Expo&rsquo;s
+handling of that request is covered by
+<a href="https://expo.dev/privacy">Expo&rsquo;s privacy policy</a>.</p>
+
+<hr>
+
+<h2>5. Children</h2>
+<p>Blocksy TV is a productivity and screen-time tool intended for the person who
+sets up the device. It does not knowingly collect personal information from anyone,
+including children, because it does not collect personal information at all.</p>
+
+<hr>
+
+<h2>6. Your controls and deleting your data</h2>
+<ul>
+  <li>You can change or remove blocked apps, time limits, and the settings PIN at
+  any time inside the app.</li>
+  <li>To erase everything Blocksy TV has stored: uninstall the app, or go to
+  <em>Android Settings &rarr; Apps &rarr; Blocksy TV &rarr; Storage &rarr;
+  Clear data</em>. This permanently deletes the local database, your settings, and
+  the PIN hash. There is no account to delete.</li>
+  <li>Revoking the Usage Access or Accessibility permission in Android Settings
+  immediately stops the app from reading that information.</li>
+</ul>
+
+<hr>
+
+<h2>7. Changes to this policy</h2>
+<p>If this policy changes, the &ldquo;last updated&rdquo; date above will change,
+and any material change will be noted in the app&rsquo;s release notes. Continued
+use of the app after an update means you accept the revised policy.</p>
+
+<hr>
+
+<h2>8. Contact</h2>
+<p>Questions about this policy or your privacy in Blocksy TV:
+<a href="mailto:juanmlamperti@gmail.com">juanmlamperti@gmail.com</a></p>
+
+<footer>
+  Blocksy TV &middot; Privacy Policy &middot; This page is the canonical privacy
+  policy referenced by the Google Play listing for Blocksy TV.
+</footer>
+
+</main>
+</body>
+</html>
