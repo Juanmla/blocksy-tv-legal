@@ -65,15 +65,18 @@
 <main>
 
 <h1>Privacy Policy — Blocksy TV</h1>
-<p class="meta">Last updated: 9 September 2026</p>
+<p class="meta">Last updated: 1 October 2026</p>
 
 <div class="lead">
-  <p><strong>Short version:</strong> Blocksy TV keeps everything on your device.
-  It has no user accounts, no servers of its own, no analytics, no advertising,
-  and no third-party trackers. It does not collect, transmit, sell, or share
-  your personal information.</p>
-  <p>The app connects to the internet for one purpose only: to check whether a
-  newer version of the app is available. That check contains no personal data.</p>
+  <p><strong>Short version:</strong> Blocksy TV keeps your usage data on your
+  device. It has no user accounts, no servers of its own, no analytics, no
+  advertising, and no third-party trackers. It does not sell or share your
+  personal information.</p>
+  <p>The app connects to the internet for two purposes only: to check whether a
+  newer version of the app is available, and, if the app crashes, to send a
+  technical crash report so the problem can be fixed. Neither contains your
+  usage history, your list of installed or blocked apps, your PIN, or anything
+  on your screen.</p>
 </div>
 
 <p>Blocksy TV is an Android TV app that lets you block distracting apps and set
@@ -123,7 +126,7 @@ you in the app and is not stored or sent anywhere.</p>
 
 <p>All of the following is kept in Blocksy TV&rsquo;s private storage on your
 device. None of it is uploaded, backed up to a remote server by the app, or shared
-with anyone.</p>
+with anyone &mdash; including in crash reports (see section 4).</p>
 
 <table>
   <tr><th>Data</th><th>Purpose</th><th>Where</th></tr>
@@ -156,15 +159,19 @@ installed the app.</p>
 <hr>
 
 <h2>3. Data sharing and selling</h2>
-<p>None. Blocksy TV contains no advertising SDKs, no analytics or crash-reporting
-SDKs, and no third-party trackers. It does not share or sell any data, because it
-does not collect any.</p>
+<p>None. Blocksy TV contains no advertising SDKs, no analytics SDKs, and no
+third-party trackers, and it never sells data. The only data that leaves your
+device is the technical information described in section 4, which is sent to
+service providers that process it on our behalf solely to deliver app updates and
+diagnose crashes &mdash; not for advertising, profiling, or any other purpose.</p>
 
 <hr>
 
 <h2>4. Network use</h2>
-<p>Blocksy TV works fully offline. It makes one kind of network request: it asks
-Expo&rsquo;s update service (<code>u.expo.dev</code>) whether a newer JavaScript
+<p>Blocksy TV works fully offline. It makes two kinds of network request.</p>
+
+<h3>Update check</h3>
+<p>It asks Expo&rsquo;s update service (<code>u.expo.dev</code>) whether a newer JavaScript
 bundle for the app is available, so bug fixes can be delivered without a full app
 update. That request carries only technical information &mdash; the app version,
 the platform, the update channel, and a random installation identifier generated
@@ -172,12 +179,42 @@ by the update library &mdash; and <strong>no personal data</strong>. Expo&rsquo;
 handling of that request is covered by
 <a href="https://expo.dev/privacy">Expo&rsquo;s privacy policy</a>.</p>
 
+<h3>Crash reports</h3>
+<p>If the app crashes or hits an unexpected error, it sends a crash report to
+<a href="https://sentry.io">Sentry</a>, a crash-reporting service, so the bug can be
+found and fixed. A crash report contains:</p>
+<ul>
+  <li>the technical error and the location in the app&rsquo;s code where it
+  happened (a stack trace);</li>
+  <li>device and app diagnostics at the time of the crash &mdash; device model,
+  Android version, app version, language and time-zone settings, and memory and
+  storage state;</li>
+  <li>the Blocksy screen that was open and the in-app steps leading up to the
+  error;</li>
+  <li>a random identifier generated when the app is installed, used only to count
+  how many installations are affected by a crash. It is not a hardware or
+  advertising identifier and is reset if you reinstall the app.</li>
+</ul>
+<p>Crash reports are configured <strong>not</strong> to include your IP address,
+screenshots, the layout or contents of the screen, the list of apps installed on
+your device, your usage history, your blocked apps or limits, or your PIN. The one
+exception: if an error happens while Blocksy is handling a particular app, the
+technical error message may name that app&rsquo;s package (for example
+<code>com.example.videoapp</code>). Crash reports are not linked to your identity
+or used to track you.</p>
+<p>Crash reports are sent over an encrypted connection, processed by Sentry in the
+United States, and automatically deleted after at most 90 days. Sentry&rsquo;s
+handling of this data is covered by
+<a href="https://sentry.io/privacy/">Sentry&rsquo;s privacy policy</a>.</p>
+
 <hr>
 
 <h2>5. Children</h2>
 <p>Blocksy TV is a productivity and screen-time tool intended for the person who
 sets up the device. It does not knowingly collect personal information from anyone,
-including children, because it does not collect personal information at all.</p>
+including children. The only data that leaves the device is the technical
+information described in section 4, which does not identify the person using the
+TV.</p>
 
 <hr>
 
@@ -191,6 +228,10 @@ including children, because it does not collect personal information at all.</p>
   the PIN hash. There is no account to delete.</li>
   <li>Revoking the Usage Access or Accessibility permission in Android Settings
   immediately stops the app from reading that information.</li>
+  <li>Crash reports are deleted automatically (see section 4). To ask for them to
+  be deleted sooner, email the address in section 8. Because reports are not
+  linked to your identity, include roughly when the crash happened and your app
+  version.</li>
 </ul>
 
 <hr>
